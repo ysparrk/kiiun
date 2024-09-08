@@ -6,6 +6,7 @@ import com.cx_project.kiiun.global.enums.Morph;
 import com.cx_project.kiiun.global.enums.Species;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
@@ -76,4 +77,22 @@ public class Lizard {
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
+    @Builder
+    public Lizard(Long id, String lizardName, String adoptDate, String birthDate, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber, Member member, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
+        this.id = id;
+        this.lizardName = lizardName;
+        this.adoptDate = adoptDate;
+        this.birthDate = birthDate;
+        this.species = species;
+        this.morph = morph;
+        this.wantsMate = wantsMate;
+        this.optTemperature = optTemperature;
+        this.optHumidity = optHumidity;
+        this.hausNumber = hausNumber;
+        this.member = member;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.isDeleted = isDeleted;
+        this.deletedAt = deletedAt;
+    }
 }

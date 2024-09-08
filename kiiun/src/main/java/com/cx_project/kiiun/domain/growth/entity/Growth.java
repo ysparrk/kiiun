@@ -3,6 +3,7 @@ package com.cx_project.kiiun.domain.growth.entity;
 import com.cx_project.kiiun.domain.lizard.entity.Lizard;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
@@ -45,4 +46,15 @@ public class Growth {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
+
+    @Builder
+    public Growth(Long id, Integer weight, Lizard lizard, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
+        this.id = id;
+        this.weight = weight;
+        this.lizard = lizard;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.isDeleted = isDeleted;
+        this.deletedAt = deletedAt;
+    }
 }
