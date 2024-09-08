@@ -1,19 +1,79 @@
 package com.cx_project.kiiun.domain.lizard.entity;
 
+import com.cx_project.kiiun.domain.growth.entity.Growth;
+import com.cx_project.kiiun.domain.member.entity.Member;
+import com.cx_project.kiiun.global.enums.Morph;
+import com.cx_project.kiiun.global.enums.Species;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "lizard")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@SQLDelete(sql = "UPDATE lizard SET deleted_at = now() WHERE lizard_id = ?")
+@SQLDelete(sql = "UPDATE lizard SET deleted_at = now() WHERE id = ?")
 public class Lizard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
     private Long id;
+
+    @Column(name = "lizard_name")
+    private String lizardName;
+
+    @Column(name = "adopt_date", length = 8)
+    private String adoptDate;
+
+    @Column(name = "brithDate", length = 8)
+    private String birthDate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "species")
+    private Species species;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "morph")
+    private Morph morph;
+
+    @Column(name = "wants_mate")
+    private boolean wantsMate;
+
+    @Column(name = "opt_temperature")
+    private float optTemperature;
+
+    @Column(name = "opt_humidity")
+    private float optHumidity;
+
+    @Column(name = "haus_number")
+    private String hausNumber;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id", nullable = false)
+    private Member member;
+
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "modified_at", nullable = false)
+    private LocalDateTime modifiedAt;
+
+    @ColumnDefault("false")
+    @Column(name = "is_deleted")
+    private Boolean isDeleted = false;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime deletedAt;
+
 }
