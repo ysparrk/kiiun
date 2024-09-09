@@ -1,4 +1,4 @@
-package com.cx_project.kiiun.global.util.enums.cookie;
+package com.cx_project.kiiun.global.util.cookie;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

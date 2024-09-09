@@ -3,7 +3,7 @@ package com.cx_project.kiiun.global.auth.oauth.handler;
 import com.cx_project.kiiun.global.auth.dto.CustomOAuth2User;
 import com.cx_project.kiiun.global.auth.service.JwtService;
 import com.cx_project.kiiun.global.service.RedisService;
-import com.cx_project.kiiun.global.util.enums.cookie.CookieService;
+import com.cx_project.kiiun.global.util.cookie.CookieService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

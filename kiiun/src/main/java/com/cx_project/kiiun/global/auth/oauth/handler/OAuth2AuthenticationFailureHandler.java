@@ -1,7 +1,7 @@
 package com.cx_project.kiiun.global.auth.oauth.handler;
 
 import com.cx_project.kiiun.global.auth.repository.HttpCookieOAuth2AuthorizationRequestRepository;
-import com.cx_project.kiiun.global.util.enums.cookie.CookieService;
+import com.cx_project.kiiun.global.util.cookie.CookieService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

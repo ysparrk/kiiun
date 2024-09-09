@@ -1,6 +1,6 @@
 package com.cx_project.kiiun.global.auth.repository;
 
-import com.cx_project.kiiun.global.util.enums.cookie.CookieService;
+import com.cx_project.kiiun.global.util.cookie.CookieService;
 import com.nimbusds.oauth2.sdk.util.StringUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
