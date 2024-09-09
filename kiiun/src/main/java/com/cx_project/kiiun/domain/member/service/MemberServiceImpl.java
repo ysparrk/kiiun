@@ -1,5 +1,6 @@
 package com.cx_project.kiiun.domain.member.service;
 
+import com.cx_project.kiiun.domain.member.dto.request.MemberSignupReqDTO;
 import com.cx_project.kiiun.domain.member.entity.Member;
 import com.cx_project.kiiun.domain.member.repository.MemberRepository;
 import com.cx_project.kiiun.global.auth.dto.AuthUserInfo;
@@ -37,5 +38,12 @@ public class MemberServiceImpl implements MemberService{
             memberRepository.save(member);
         }
         return new AuthUserInfo(member.getId(), member.getEmail(), Arrays.asList("USER"));
+    }
+
+    @Override
+    @Transactional
+    public void signup(Long id, MemberSignupReqDTO memberSignupReqDTO) {
+        Member member = memberRepository.findById(id).orElseThrow();
+        member.signup(memberSignupReqDTO);
     }
 }

@@ -1,7 +1,6 @@
 package com.cx_project.kiiun.domain.member.entity;
 
-import com.cx_project.kiiun.domain.growth.entity.Growth;
-import com.cx_project.kiiun.domain.lizard.entity.Lizard;
+import com.cx_project.kiiun.domain.member.dto.request.MemberSignupReqDTO;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -13,8 +12,6 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "member")
@@ -74,5 +71,10 @@ public class Member {
         this.isDeleted = isDeleted;
         this.deletedAt = deletedAt;
         this.isActive = isActive;
+    }
+
+    public void signup(MemberSignupReqDTO memberSignupReqDTO){
+        this.nickname = memberSignupReqDTO.getNickname();
+        this.isActive = Boolean.TRUE;
     }
 }
