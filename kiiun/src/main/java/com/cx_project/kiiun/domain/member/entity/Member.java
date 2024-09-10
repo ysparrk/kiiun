@@ -35,10 +35,14 @@ public class Member {
     private String profileUrl;
 
     //TODO: 주소 데이터 입력 방식 상의
-    @Column(name = "locate")
-    private String locate;
+    @Column(name = "location")
+    private String location;
 
-    //TODO: Lizard 테이블과의 양방향 매핑이 필요한지 고민
+    @Column(name = "longitude")
+    private Double longitude;
+
+    @Column(name = "latitude")
+    private Double latitude;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
@@ -60,12 +64,14 @@ public class Member {
     private Boolean isActive=false;  //기본 정보 입력 후 회원 가입 확정
 
     @Builder
-    public Member(Long id, String email, String nickname, String profileUrl, String locate, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt, Boolean isActive) {
+    public Member(Long id, String email, String nickname, String profileUrl, String location, Double longitude, Double latitude, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt, Boolean isActive) {
         this.id = id;
         this.email = email;
         this.nickname = nickname;
         this.profileUrl = profileUrl;
-        this.locate = locate;
+        this.location = location;
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
         this.isDeleted = isDeleted;
@@ -73,8 +79,21 @@ public class Member {
         this.isActive = isActive;
     }
 
+
     public void signup(MemberSignupReqDTO memberSignupReqDTO){
         this.nickname = memberSignupReqDTO.getNickname();
         this.isActive = Boolean.TRUE;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
     }
 }
