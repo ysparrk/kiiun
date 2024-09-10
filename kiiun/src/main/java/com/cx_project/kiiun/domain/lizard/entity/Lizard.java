@@ -1,5 +1,6 @@
 package com.cx_project.kiiun.domain.lizard.entity;
 
+import com.cx_project.kiiun.domain.lizard.dto.request.LizardReqDTO;
 import com.cx_project.kiiun.domain.member.entity.Member;
 import com.cx_project.kiiun.global.enums.Morph;
 import com.cx_project.kiiun.global.enums.Species;
@@ -12,11 +13,9 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.mongodb.repository.CountQuery;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name = "lizard")
@@ -97,5 +96,23 @@ public class Lizard {
         this.modifiedAt = modifiedAt;
         this.isDeleted = isDeleted;
         this.deletedAt = deletedAt;
+    }
+
+    public static Lizard fromReqDto(LizardReqDTO lizardReqDTO) {
+        return Lizard.builder()
+                .lizardName(lizardReqDTO.getLizardName())
+                .adoptDate(lizardReqDTO.getAdoptDate())
+                .birthDate(lizardReqDTO.getBirthDate())
+                .species(lizardReqDTO.getSpecies())
+                .morph(lizardReqDTO.getMorph())
+                .wantsMate(lizardReqDTO.isWantsMate())
+                .optTemperature(lizardReqDTO.getOptTemperature())
+                .optHumidity(lizardReqDTO.getOptHumidity())
+                .hausNumber(lizardReqDTO.getHausNumber())
+                .build();
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 }

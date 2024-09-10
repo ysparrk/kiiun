@@ -1,4 +1,5 @@
 package com.cx_project.kiiun.global.enums;
 
 public enum Species {
+    NORMAL, ALBINO, HYPO
 }
