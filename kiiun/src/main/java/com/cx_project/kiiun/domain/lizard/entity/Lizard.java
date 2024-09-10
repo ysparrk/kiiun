@@ -1,6 +1,5 @@
 package com.cx_project.kiiun.domain.lizard.entity;
 
-import com.cx_project.kiiun.domain.growth.entity.Growth;
 import com.cx_project.kiiun.domain.member.entity.Member;
 import com.cx_project.kiiun.global.enums.Morph;
 import com.cx_project.kiiun.global.enums.Species;
@@ -13,6 +12,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.mongodb.repository.CountQuery;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,6 +37,9 @@ public class Lizard {
 
     @Column(name = "brithDate", length = 8)
     private String birthDate;
+
+    @Column(name = "current_weight")
+    private float currentWeight;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "species")

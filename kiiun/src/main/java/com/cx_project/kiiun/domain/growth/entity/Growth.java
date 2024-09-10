@@ -26,7 +26,7 @@ public class Growth {
     private Long id;
 
     @Column(name = "weight")
-    private Integer weight;
+    private float weight;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lizard_id", nullable = false)
