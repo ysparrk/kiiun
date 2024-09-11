@@ -48,7 +48,7 @@ public class Growth {
     private LocalDateTime deletedAt;
 
     @Builder
-    public Growth(Long id, Integer weight, Lizard lizard, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
+    public Growth(Long id, float weight, Lizard lizard, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
         this.id = id;
         this.weight = weight;
         this.lizard = lizard;

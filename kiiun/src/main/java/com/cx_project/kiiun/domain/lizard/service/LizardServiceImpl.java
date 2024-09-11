@@ -1,5 +1,7 @@
 package com.cx_project.kiiun.domain.lizard.service;
 
+import com.cx_project.kiiun.domain.growth.entity.Growth;
+import com.cx_project.kiiun.domain.growth.repository.GrowthRepository;
 import com.cx_project.kiiun.domain.lizard.dto.request.LizardReqDTO;
 import com.cx_project.kiiun.domain.lizard.dto.response.LizardResDTO;
 import com.cx_project.kiiun.domain.lizard.entity.Lizard;
@@ -20,6 +22,7 @@ public class LizardServiceImpl implements LizardService{
 
     private final LizardRepository lizardRepository;
     private final MemberRepository memberRepository;
+    private final GrowthRepository growthRepository;
 
 
     @Override
@@ -30,6 +33,15 @@ public class LizardServiceImpl implements LizardService{
         lizard.setMember(member);
 
         lizardRepository.save(lizard);
+
+        //몸무게 저장
+        Growth growth = Growth.builder()
+                .weight(lizardReqDTO.getCurrentWeight())
+                .lizard(lizard)
+                .build();
+
+        growthRepository.save(growth);
+
     }
 
     @Override

@@ -7,9 +7,11 @@ import lombok.Getter;
 
 @Getter
 public class LizardReqDTO {
+    private Long memberId;
     private String lizardName;
     private String adoptDate;
     private String birthDate;
+    private float currentWeight;
     private Species species;
     private Morph morph;
     private boolean wantsMate;
@@ -17,15 +19,14 @@ public class LizardReqDTO {
     private float optHumidity;
     private String hausNumber;
 
-    public LizardReqDTO() {
-
-    }
 
     @Builder
-    public LizardReqDTO(String lizardName, String adoptDate, String birthDate, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber) {
+    public LizardReqDTO(Long memberId, String lizardName, String adoptDate, String birthDate, float currentWeight, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber) {
+        this.memberId = memberId;
         this.lizardName = lizardName;
         this.adoptDate = adoptDate;
         this.birthDate = birthDate;
+        this.currentWeight = currentWeight;
         this.species = species;
         this.morph = morph;
         this.wantsMate = wantsMate;

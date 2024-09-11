@@ -11,6 +11,7 @@ public class LizardResDTO {
     private String lizardName;
     private String adoptDate;
     private String birthDate;
+    private float currentWeight;
     private Species species;
     private Morph morph;
     private boolean wantsMate;
@@ -19,11 +20,12 @@ public class LizardResDTO {
     private String hausNumber;
 
     @Builder
-    public LizardResDTO(Long lizardId, String lizardName, String adoptDate, String birthDate, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber) {
+    public LizardResDTO(Long lizardId, String lizardName, String adoptDate, String birthDate, float currentWeight, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber) {
         this.lizardId = lizardId;
         this.lizardName = lizardName;
         this.adoptDate = adoptDate;
         this.birthDate = birthDate;
+        this.currentWeight = currentWeight;
         this.species = species;
         this.morph = morph;
         this.wantsMate = wantsMate;

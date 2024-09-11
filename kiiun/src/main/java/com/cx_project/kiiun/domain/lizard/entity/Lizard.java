@@ -80,11 +80,12 @@ public class Lizard {
     private LocalDateTime deletedAt;
 
     @Builder
-    public Lizard(Long id, String lizardName, String adoptDate, String birthDate, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber, Member member, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
+    public Lizard(Long id, String lizardName, String adoptDate, String birthDate, float currentWeight, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber, Member member, LocalDateTime createdAt, LocalDateTime modifiedAt, Boolean isDeleted, LocalDateTime deletedAt) {
         this.id = id;
         this.lizardName = lizardName;
         this.adoptDate = adoptDate;
         this.birthDate = birthDate;
+        this.currentWeight = currentWeight;
         this.species = species;
         this.morph = morph;
         this.wantsMate = wantsMate;
@@ -98,11 +99,13 @@ public class Lizard {
         this.deletedAt = deletedAt;
     }
 
+
     public static Lizard fromReqDto(LizardReqDTO lizardReqDTO) {
         return Lizard.builder()
                 .lizardName(lizardReqDTO.getLizardName())
                 .adoptDate(lizardReqDTO.getAdoptDate())
                 .birthDate(lizardReqDTO.getBirthDate())
+                .currentWeight(lizardReqDTO.getCurrentWeight())
                 .species(lizardReqDTO.getSpecies())
                 .morph(lizardReqDTO.getMorph())
                 .wantsMate(lizardReqDTO.isWantsMate())

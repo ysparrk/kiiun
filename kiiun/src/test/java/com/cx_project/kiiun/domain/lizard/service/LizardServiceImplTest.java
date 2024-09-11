@@ -42,10 +42,15 @@ class LizardServiceImplTest {
         MEMBER1 = memberRepository.save(member1);
 
         Lizard lizard1 = Lizard.builder()
-                .member(member1)
                 .lizardName("사막이")
+                .currentWeight(20.8f)
                 .species(Species.CRESTED_GECKO)
                 .morph(Morph.FLAME)
+                .adoptDate("20240216")
+                .birthDate("20230319")
+                .optTemperature(21)
+                .optHumidity(13)
+                .hausNumber("defhdfdeddzdr")
                 .build();
 
         LIZARD1 = lizardRepository.save(lizard1);
@@ -58,6 +63,7 @@ class LizardServiceImplTest {
         //given
         LizardReqDTO lizardReqDTO = LizardReqDTO.builder()
                 .lizardName("도망이")
+                .currentWeight(20.8f)
                 .species(Species.CRESTED_GECKO)
                 .morph(Morph.FLAME)
                 .adoptDate("20240216")
