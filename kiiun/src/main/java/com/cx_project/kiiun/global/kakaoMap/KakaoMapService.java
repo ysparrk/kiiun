@@ -3,14 +3,20 @@ package com.cx_project.kiiun.global.kakaoMap;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
 import org.springframework.stereotype.Service;
-
+import org.springframework.beans.factory.annotation.Value;
 import java.io.IOException;
+import java.io.*;
+
 
 @Service
 public class KakaoMapService {
 
-    private static final String API_KEY = "1fec60929c95a6c6e0897b2631857c48";
-    private static final String API_URL = "https://dapi.kakao.com/v2/local/search/address.json";
+    @Value("${kakao.api.key}")
+    private String API_KEY;
+
+    @Value("${kakao.api.url}")
+    private String API_URL;
+
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
 
