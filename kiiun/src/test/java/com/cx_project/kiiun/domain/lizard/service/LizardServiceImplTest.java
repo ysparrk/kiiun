@@ -42,6 +42,7 @@ class LizardServiceImplTest {
         MEMBER1 = memberRepository.save(member1);
 
         Lizard lizard1 = Lizard.builder()
+                .member(MEMBER1)
                 .lizardName("사막이")
                 .currentWeight(20.8f)
                 .species(Species.CRESTED_GECKO)
@@ -62,6 +63,7 @@ class LizardServiceImplTest {
     void saveLizard() {
         //given
         LizardReqDTO lizardReqDTO = LizardReqDTO.builder()
+                .memberId(MEMBER1.getId())
                 .lizardName("도망이")
                 .currentWeight(20.8f)
                 .species(Species.CRESTED_GECKO)
