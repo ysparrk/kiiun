@@ -34,12 +34,12 @@ public class LizardController {
                         .build());
     }
 
-    @GetMapping
+    @GetMapping("/{memberId}")
     public ResponseEntity<ResponseDTO> getAllLizard(
-            @Valid @RequestBody MemberReqDTO memberReqDTO
+            @PathVariable(required = false) Long memberId
     ) {
 
-        List<LizardResDTO> lizards = lizardService.getLizards(memberReqDTO.getMemberId());
+        List<LizardResDTO> lizards = lizardService.getLizards(memberId);
 
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ResponseDTO.builder()
