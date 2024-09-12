@@ -57,6 +57,7 @@ public class LizardServiceImpl implements LizardService{
                         .lizardName(lizard.getLizardName())
                         .adoptDate(lizard.getAdoptDate())
                         .birthDate(lizard.getBirthDate())
+                        .currentWeight(lizard.getCurrentWeight())
                         .species(lizard.getSpecies())
                         .morph(lizard.getMorph())
                         .optTemperature(lizard.getOptTemperature())

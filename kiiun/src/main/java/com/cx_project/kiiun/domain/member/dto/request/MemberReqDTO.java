@@ -7,6 +7,9 @@ import lombok.Getter;
 public class MemberReqDTO {
     private Long memberId;
 
+    public MemberReqDTO() {
+
+    }
 
     @Builder
     public MemberReqDTO(Long memberId) {

@@ -19,6 +19,9 @@ public class LizardReqDTO {
     private float optHumidity;
     private String hausNumber;
 
+    public LizardReqDTO() {
+
+    }
 
     @Builder
     public LizardReqDTO(Long memberId, String lizardName, String adoptDate, String birthDate, float currentWeight, Species species, Morph morph, boolean wantsMate, float optTemperature, float optHumidity, String hausNumber) {
