@@ -77,7 +77,7 @@
     <img src="https://img.shields.io/badge/MariaDB-4479A1?style=flat&logo=mariadb&logoColor=white"/>
 </p>
 
-#### Data Analyst
+#### Data Analysis
 
 <p>
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white"/>
