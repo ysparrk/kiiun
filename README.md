@@ -67,7 +67,6 @@
     <img src="https://img.shields.io/badge/springboot-6DB33F?style=flat&logo=springboot&logoColor=white"/>
     <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=flat&logo=springsecurity&logoColor=white"/>
     <img src="https://img.shields.io/badge/JWT-000000?style=flat&logo=jsonwebtokens&logoColor=white"/>
-    <img src="https://img.shields.io/badge/spring_Web_Socket-6DB33F?style=flat&logo=socket.io&logoColor=white"/>
     <img src="https://img.shields.io/badge/gradle-02303A?style=flat&logo=gradle&logoColor=white">
 </p>
 
