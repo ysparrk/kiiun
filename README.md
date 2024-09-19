@@ -41,7 +41,21 @@
 ![Untitled](/src/erd.png)
 
 
+### D. System Architecture
+![Untitled](/src/Frame%201.png)
 
+
+### E. 기능 설명
+
+
+![Untitled](/src/기능정의_하우스.png)
+
+<br>
+
+![Untitled](/src/기능정의서_성장.png)
+
+
+<br>
 
 ## 🛠️ Skills
 
